@@ -1,60 +1,40 @@
 import React from "react";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Text } from "../../index";
+import { Text } from "../..";
 
 export default {
   title: "Text",
   component: Text,
 } as ComponentMeta<typeof Text>;
 
-export const NormalWeight: ComponentStory<typeof Text> = (args) => {
+export const LightBackground: ComponentStory<typeof Text> = (args) => {
   return (
     <>
-      <div>
-        <Text {...args}>UI 11 Text</Text>
-      </div>
-      <div>
-        <Text variants="UI12" {...args}>
-          UI 12 Text
-        </Text>
-      </div>
-      <div>
-        <Text variants="UI13" {...args}>
-          UI 13 Text
-        </Text>
-      </div>
-      <div>
-        <Text variants="UI14" {...args}>
-          UI 14 Text
-        </Text>
+      <div style={{ padding: "1em" }}>
+        <Text {...args} />
       </div>
     </>
   );
 };
 
-export const MediumWeight: ComponentStory<typeof Text> = (args) => {
+LightBackground.args = {
+  variants: "UI11",
+  weight: "normal",
+  isInverse: false,
+  children: "UI Text",
+};
+
+export const DarkBackground: ComponentStory<typeof Text> = (args) => {
   return (
     <>
-      <div>
-        <Text weight="medium" {...args}>
-          UI 11 Text
-        </Text>
-      </div>
-      <div>
-        <Text variants="UI12" weight="medium" {...args}>
-          UI 12 Text
-        </Text>
-      </div>
-      <div>
-        <Text variants="UI13" weight="medium" {...args}>
-          UI 13 Text
-        </Text>
-      </div>
-      <div>
-        <Text variants="UI14" weight="medium" {...args}>
-          UI 14 Text
-        </Text>
+      <div style={{ backgroundColor: "black", color: "white", padding: "1em" }}>
+        <Text {...args} />
       </div>
     </>
   );
+};
+
+DarkBackground.args = {
+  ...LightBackground.args,
+  isInverse: true,
 };
