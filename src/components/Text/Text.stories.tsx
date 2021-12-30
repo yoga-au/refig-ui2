@@ -7,6 +7,9 @@ export default {
   component: Text,
 } as ComponentMeta<typeof Text>;
 
+// DOCS NOTE:
+// Remind user about default props value, especially color properties
+
 export const LightBackground: ComponentStory<typeof Text> = (args) => {
   return (
     <>
@@ -27,8 +30,8 @@ LightBackground.args = {
 export const DarkBackground: ComponentStory<typeof Text> = (args) => {
   return (
     <>
-      <div style={{ backgroundColor: "black", color: "white", padding: "1em" }}>
-        <Text {...args} />
+      <div style={{ backgroundColor: "black", padding: "1em" }}>
+        <Text {...args} style={{ color: "white" }} />
       </div>
     </>
   );

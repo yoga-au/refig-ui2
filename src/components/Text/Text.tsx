@@ -10,14 +10,17 @@ const Text = React.forwardRef<Ref<HTMLDivElement>, Props>((props, ref) => {
     variants = "UI11",
     weight = "normal",
     isInverse = false,
+    className = "",
     ...restProps
   } = props;
 
-  const { fonts, fontSizes, fontWeights, lineHeights, letterSpacings } = theme;
+  const { fonts, fontSizes, fontWeights, lineHeights, letterSpacings, colors } =
+    theme;
 
   const textStyle = css({
     // base
     fontFamily: fonts.inter.value,
+    color: colors.black8.value,
 
     variants: {
       variants: {
@@ -66,7 +69,9 @@ const Text = React.forwardRef<Ref<HTMLDivElement>, Props>((props, ref) => {
 
   return (
     <div
-      className={textStyle({ variants: variants, weight: weight })}
+      className={`${textStyle({ variants: variants, weight: weight })}${
+        className && " "
+      }${className}`}
       ref={ref}
       {...restProps}
     >
