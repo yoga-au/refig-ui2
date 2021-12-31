@@ -66,9 +66,9 @@ const { theme } = createStitches({
       negXl: "-.001em",
     },
     radii: {
-      sm: 2,
-      md: 5,
-      lg: 6,
+      sm: "2px",
+      md: "5px",
+      lg: "6px",
     },
     shadows: {
       hud: "0 5px 17px rgba(0, 0, 0, .2), 0 2px 7px rgba(0, 0, 0, .15)",
